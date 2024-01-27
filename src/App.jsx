@@ -26,10 +26,7 @@ if (type === "checkbox") {
 }
 else{
 
-  setFormData({
-    ...formData,
-    [event.target.name]: event.target.value
-  })
+  setFormData({...formData, [event.target.name]: event.target.value})
 }
   
 }
