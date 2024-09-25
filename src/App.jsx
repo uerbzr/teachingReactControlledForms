@@ -24,6 +24,7 @@ function App() {
     } else {
       setFormData({ ...formData, [event.target.name]: event.target.value });
     }
+    console.log(formData);
   };
 
   const handleSubmit = (event) => {
@@ -40,8 +41,10 @@ function App() {
       body: JSON.stringify(formData),
     })
       .then((res) => {
-        if ((res.status = 200)) {
-          return <div>Done!</div>;
+        if (res.status === 200) {
+          const root = document.getElementById("root");
+          root.innerHTML =
+            "<h1>Submitted</h1><br /><a href='http://localhost:5174'>try another</a>";
         }
         console.log(res.json());
       })
@@ -74,7 +77,7 @@ function App() {
               value={formData.address}
             />
           </label>
-          <label for="PhoneNumber">
+          <label htmlFor="PhoneNumber">
             Phone Number
             <input
               id="PhoneNumber"
@@ -85,7 +88,7 @@ function App() {
             />
           </label>
 
-          <label for="Email">
+          <label htmlFor="Email">
             Email
             <input
               id="Email"
@@ -98,7 +101,7 @@ function App() {
         </div>
 
         <div className="form__section-right">
-          <label for="complaint">
+          <label htmlFor="complaint">
             Write your complaint
             <textarea
               id="complaint"
