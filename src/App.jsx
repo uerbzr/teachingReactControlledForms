@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import ComplaintForm from "./components/ComplaintForm";
+import Success from "./components/Success";
 import "./App.css";
 
 function App() {
@@ -28,15 +29,7 @@ function App() {
             <ComplaintForm formData={formData} setFormData={setFormData} />
           }
         />
-        <Route
-          path="/success"
-          element={
-            <>
-              <h1>Success!</h1>
-              <a href="/">Back to Form..</a>
-            </>
-          }
-        />
+        <Route path="/success" element={<Success />} />
       </Routes>
     </Router>
   );
